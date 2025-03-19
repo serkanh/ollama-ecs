@@ -452,8 +452,8 @@ resource "aws_ecs_task_definition" "ollama_task" {
   family                   = "ollama-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["EC2"]
-  cpu                      = 1024
-  memory                   = 4096
+  cpu                      = 2048
+  memory                   = 5120
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
 
   container_definitions = jsonencode([
@@ -505,8 +505,8 @@ resource "aws_ecs_task_definition" "webui_task" {
   family                   = "webui-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["EC2"]
-  cpu                      = 1024
-  memory                   = 4096
+  cpu                      = 2048
+  memory                   = 5120
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
 
   container_definitions = jsonencode([
